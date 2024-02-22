@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { ExampleComponent } from 'damix-paterns-dag'
-import 'damix-paterns-dag/dist/index.css'
+import { ExampleComponent } from 'react-paterns-dag'
+import 'react-paterns-dag/dist/index.css'
 
 const App = () => {
   return <ExampleComponent text="Create React Library Example 😄" />
