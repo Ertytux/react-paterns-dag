@@ -1,16 +1,25 @@
-import { Graph } from 'react-d3-graph';
+import { Graph } from 'react-d3-graph'
 
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-import { BaseNode,BaseLink,BaseGraph,VBaseGraph } from './NodeBase'; './NodeBase';
+import {
+  BaseNode,
+  BaseLink,
+  BaseGraph,
+  VBaseGraph,
+  DefaultNode,
+  DefaultBaseLink
+} from './NodeBase'
+;('./NodeBase')
 
-const data:BaseGraph=new VBaseGraph([],[],{});
+const data: BaseGraph = new VBaseGraph([], [], {})
 
 const GraphUX: React.FC = () => {
-    const [nodes, setNodes] = useState<BaseNode[]>([]);
-    const [links,setLinks] =useState<BaseLink[]>([]);
-    const [config,setConfig] =useState<Object>({});
-    
+  const [nodes, setNodes] = useState<BaseNode[]>([])
+  const [links, setLinks] = useState<BaseLink[]>([])
+  const [config, setConfig] = useState<Object>([])
+
+  /*
     // Función para agregar un nuevo nodo 
     const addNode = (newNode: BaseNode) => {
         setNodes([...nodes, newNode]);
@@ -25,9 +34,13 @@ const GraphUX: React.FC = () => {
     const addConfig = (newconfig:Object)=>{
         setConfig(newconfig);
         data.updateConfig(config);
-    }
+    }*/
+  const snode: BaseNode = new DefaultNode()
+  setNodes([...nodes, snode])
+  const slink: BaseLink = new DefaultBaseLink()
+  setLinks([...links, slink])
+  setConfig([config, {}])
 
-    return (<Graph id="graph-id" data={data} config={data.config} />);
+  return <Graph id='graph-id' data={data} config={data.config} />
 }
-
-export default GraphUX ;
+export default GraphUX
