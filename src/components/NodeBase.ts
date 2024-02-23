@@ -1,5 +1,6 @@
 //Tipos de nodo
 export enum TypeNode{
+  DefaultNode,
   InputNode,
   ProcessNode,
   OutputNode
@@ -15,6 +16,17 @@ export interface BaseNode {
   value:number;//Evaluaci'on del nodo
   evaluator():void; //m'ertodo que eval'ua 
   get getValue():number; //getter
+}
+
+export class DefaultNode implements BaseNode{
+  id: string="";
+  label: string=""; 
+  typeNode:TypeNode=TypeNode.DefaultNode; 
+  description:string=""; 
+  inputNodes:BaseNode[]=[];
+  value:number=0;
+  evaluator():void{} 
+  get getValue():number{return 0;}
 }
 
 //Definici'on B'asica de Relaci'on entre nodos
