@@ -35,12 +35,14 @@ export class DefaultNode implements BaseNode {
 export interface BaseLink {
   source: string //origen
   target: string //destino
+  label: string //etiqueta
   weight: number //peso
 }
 
 export class DefaultBaseLink implements BaseLink {
   source: string = '' //origen
   target: string = '' //destino
+  label: string = '' //etiqueta
   weight: number = 0 //peso
 }
 

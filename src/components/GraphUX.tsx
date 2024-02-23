@@ -14,7 +14,7 @@ import {
 
 const data: BaseGraph = new VBaseGraph([], [], {})
 
-const GraphUX: React.FC = () => {
+const GraphUX = () => {
   const [nodes, setNodes] = useState<BaseNode[]>([])
   const [links, setLinks] = useState<BaseLink[]>([])
   const [config, setConfig] = useState<Object>([])
@@ -35,6 +35,8 @@ const GraphUX: React.FC = () => {
         setConfig(newconfig);
         data.updateConfig(config);
     }*/
+   
+    // Inicializar con nodo vac'io  
   const snode: BaseNode = new DefaultNode()
   setNodes([...nodes, snode])
   const slink: BaseLink = new DefaultBaseLink()
