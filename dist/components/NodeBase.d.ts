@@ -6,7 +6,28 @@ export declare enum TypeNode {
 }
 export interface BaseNode {
     id: string;
+    cx: number;
+    cy: number;
+    fill: string;
+    fontSize: number;
+    fontColor: string;
+    fontWeight: string;
+    dx: number;
     label: string;
+    labelPosition: string;
+    opacity: number;
+    renderLabel: boolean;
+    size: number;
+    stroke: string;
+    strokeWidth: number;
+    svg: string;
+    type: string;
+    viewGenerator: any;
+    className: string;
+    onClickNode: any;
+    onRightClickNode: any;
+    onMouseOverNode: any;
+    onMouseOutNode: any;
     typeNode: TypeNode;
     description: string;
     inputNodes: BaseNode[];
@@ -15,18 +36,69 @@ export interface BaseNode {
 }
 export declare class DefaultNode implements BaseNode {
     id: string;
+    cx: number;
+    cy: number;
+    fill: string;
+    fontSize: number;
+    fontColor: string;
+    fontWeight: string;
+    dx: number;
     label: string;
+    labelPosition: string;
+    opacity: number;
+    renderLabel: boolean;
+    size: number;
+    stroke: string;
+    strokeWidth: number;
+    svg: string;
+    type: string;
+    viewGenerator: any;
+    className: string;
+    onClickNode: any;
+    onRightClickNode: any;
+    onMouseOverNode: any;
+    onMouseOutNode: any;
     typeNode: TypeNode;
     description: string;
     inputNodes: BaseNode[];
     value: number;
     evaluator(): void;
-    get getValue(): number;
 }
 export interface BaseLink {
+    d: string;
     source: string;
     target: string;
-    weight: number;
+    markerId: string;
+    strokeWidth: number;
+    stroke: string;
+    strokeDasharray: string;
+    strokeDashoffset: string;
+    strokeLinecap: string;
+    className: string;
+    opacity: number;
+    mouseCursor: string;
+    onClickLink: any;
+    onRightClickLink: any;
+    onMouseOverLink: any;
+    onMouseOutLink: any;
+}
+export declare class DefaultBaseLink implements BaseLink {
+    d: string;
+    source: string;
+    target: string;
+    markerId: string;
+    strokeWidth: number;
+    stroke: string;
+    strokeDasharray: string;
+    strokeDashoffset: string;
+    strokeLinecap: string;
+    className: string;
+    opacity: number;
+    mouseCursor: string;
+    onClickLink: any;
+    onRightClickLink: any;
+    onMouseOverLink: any;
+    onMouseOutLink: any;
 }
 export interface BaseGraph {
     config: Object;
